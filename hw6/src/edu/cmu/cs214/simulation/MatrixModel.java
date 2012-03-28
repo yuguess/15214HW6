@@ -4,35 +4,37 @@ import edu.cmu.cs214.interfaces.DataModel;
 
 public class MatrixModel implements DataModel {
 	protected Object[][] mat;
-
+	private int columnCount;
+	private int rowCount;
+	
+	public MatrixModel() {
+		
+	}
+	
 	@Override
 	public Object getObject(int row, int column) {
-		// TODO Auto-generated method stub
-		return null;
+		return mat[row][column];
 	}
 
 	@Override
 	public void setObject(int row, int column, Object obj) {
-		// TODO Auto-generated method stub
-		
+		mat[row][column] = obj;
 	}
 
 	@Override
 	public int getRowCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		return rowCount;
 	}
 
 	@Override
 	public int getColumnCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		return columnCount;
 	}
 
 	@Override
 	public void createDataModel(int row, int column) {
-		// TODO Auto-generated method stub
-		
+		rowCount = row;
+		columnCount = column;
+		mat = new Object[row][column];
 	}
-
 }
